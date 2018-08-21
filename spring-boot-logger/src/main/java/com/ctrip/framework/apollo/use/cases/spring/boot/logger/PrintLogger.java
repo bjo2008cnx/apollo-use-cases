@@ -1,11 +1,12 @@
 package com.ctrip.framework.apollo.use.cases.spring.boot.logger;
 
-import java.util.concurrent.Executors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -18,7 +19,7 @@ public class PrintLogger {
 
     @PostConstruct
     public void printLogger() throws Exception{
-        Executors.newSingleThreadExecutor().submit(() -> {
+        Callable<Object> callable = () -> {
             while (true) {
                 logger.info("我是info级别日志");
                 logger.error("我是error级别日志");
@@ -26,6 +27,7 @@ public class PrintLogger {
                 logger.debug("我是debug级别日志");
                 TimeUnit.SECONDS.sleep(1);
             }
-        });
+        };
+        Executors.newSingleThreadExecutor().submit(callable);
     }
 }
