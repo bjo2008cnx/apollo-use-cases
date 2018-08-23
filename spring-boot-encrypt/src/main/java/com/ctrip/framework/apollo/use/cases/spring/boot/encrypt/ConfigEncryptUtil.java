@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * Created by kl on 2018/6/25.
  * Content :加密工具
  */
-public class EncryptUtil {
+public class ConfigEncryptUtil {
 
     /**
      * 制表符、空格、换行符 PATTERN
@@ -24,7 +24,7 @@ public class EncryptUtil {
     /**
      * 可以理解为加密salt
      */
-    private static String PASSWORD = "klklklklklklklkl";
+    private static String PASSWORD = "8sLxdL23Pxd9FxDaKaX2CxW";
 
     /**
      * 加密算法
@@ -49,13 +49,13 @@ public class EncryptUtil {
 
         //返回加密后的数据
         Map result = new HashMap();
-        result.put("input", str.substring(index + 1));
+        result.put("output", str.substring(index + 1));
         result.put("password", PASSWORD);
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(getEncryptedParams("kl"));//print : {input=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
+        System.out.println(getEncryptedParams("kl"));//print : {output=Ore69lUopDHL5R8Bw/G3bQ==, password=klklklklklklklkl}
     }
 
     /**

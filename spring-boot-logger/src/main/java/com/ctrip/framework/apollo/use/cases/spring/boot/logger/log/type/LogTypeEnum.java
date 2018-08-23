@@ -6,7 +6,8 @@ package com.ctrip.framework.apollo.use.cases.spring.boot.logger.log.type;
  * @author sunyinjie
  * @date 2017/10/24
  */
-public enum LogType {
+public enum LogTypeEnum {
+
     /**
      * SLF4j
      */
@@ -20,8 +21,9 @@ public enum LogType {
     /**
      * log4j2框架
      */
+    LOG4J2,
 
-    LOG4J2, /**
+    /**
      * logback框架
      */
     LOGBACK,

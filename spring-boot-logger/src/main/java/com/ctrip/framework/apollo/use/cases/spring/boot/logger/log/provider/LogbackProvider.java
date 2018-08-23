@@ -2,7 +2,8 @@ package com.ctrip.framework.apollo.use.cases.spring.boot.logger.log.provider;
 
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
-import com.ctrip.framework.apollo.use.cases.spring.boot.logger.log.common.LogLevel;
+import com.ctrip.framework.apollo.use.cases.spring.boot.logger.log.LogProvider;
+import com.ctrip.framework.apollo.use.cases.spring.boot.logger.log.common.LogLevelEnum;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
@@ -35,7 +36,7 @@ public class LogbackProvider implements LogProvider<Logger> {
     }
 
     @Override
-    public void refresh(String name, LogLevel logLevel) {
+    public void refresh(String name, LogLevelEnum logLevel) {
 
     }
 }
